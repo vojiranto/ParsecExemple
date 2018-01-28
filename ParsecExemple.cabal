@@ -1,0 +1,68 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e01adf902b3cda11dd4d0a791fa73f2fb2f2e1c5efd0a84c19bf7ebdbb53d9cd
+
+name:           ParsecExemple
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/Vojiranto/Parsec-task#readme>
+homepage:       https://github.com/Vojiranto/ParsecExemple#readme
+bug-reports:    https://github.com/Vojiranto/ParsecExemple/issues
+author:         Dmitriy Pavlyuk
+maintainer:     example@example.com
+copyright:      2018 Dmitriy Pavlyuk
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Vojiranto/ParsecExemple
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , do-list
+    , parsec
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_ParsecExemple
+  default-language: Haskell2010
+
+executable Parsec-task-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ParsecExemple
+    , base >=4.7 && <5
+    , do-list
+    , parsec
+  other-modules:
+      Paths_ParsecExemple
+  default-language: Haskell2010
+
+test-suite Parsec-task-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ParsecExemple
+    , base >=4.7 && <5
+    , do-list
+    , parsec
+  other-modules:
+      Paths_ParsecExemple
+  default-language: Haskell2010
