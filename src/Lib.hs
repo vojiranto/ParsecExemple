@@ -14,7 +14,7 @@ someFunc = do
 phoneNumber :: Parsec String u String
 phoneNumber = plusNum <|> num
 
--- номера начинающиеся на +7
+-- номера начинающиеся на +7 или 8
 plusNum :: Parsec String u String
 plusNum = do
     string "+7" <|> string "8"
@@ -34,7 +34,7 @@ readCode = do
     optional $ char '('
     code    <- count 3 digit
     optional $ char ')'
-    pure $ "("<> code <> ")"
+    pure $ "(" <> code <> ")"
 
 
 readNumber :: Parsec String u String
